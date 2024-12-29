@@ -12,7 +12,6 @@ app.use(express.json());
 const DID_BASE_URL = "https://api.d-id.com";
 const DID_API_KEY = process.env.DID_API_KEY;
 
-
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 
@@ -44,7 +43,7 @@ app.get("/generate-avatar", async (req, res) => {
 
         const headers = {
             "Content-Type": "application/json",
-            "Authorization": "Basic d2kyMjM0ODhAZ21haWwuY29t:k9850n2drmLXuA7CsAFZR"
+            "Authorization": `Basic ${DID_API_KEY}`
         }
 
         const createResponse = await axios.post(
